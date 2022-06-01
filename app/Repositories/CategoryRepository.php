@@ -21,4 +21,9 @@ class CategoryRepository implements CategoryRepositoryInterface
     {
         return Cateory::create($data);
     }
+
+    public function updateCategory(array $data, $id)
+    {
+        return Cateory::where('id', $id)->update($data);
+    }
 }
