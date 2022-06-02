@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdatePostRequest;
 use App\Repositories\Interfaces\PostRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -88,9 +89,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdatePostRequest $request, $id)
     {
-        //
+        $validated = $request->validated();
+
+        return $this->postRepository->updatePost($validated, $id);
     }
 
     /**
