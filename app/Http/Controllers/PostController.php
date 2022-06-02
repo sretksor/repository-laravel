@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Repositories\Interfaces\PostRepositoryInterface;
 use Illuminate\Http\Request;
@@ -55,9 +56,11 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        return $this->postRepository->createPost($validated);
     }
 
     /**
