@@ -10,6 +10,9 @@
         //getById
         public function getById($id);
 
+        //createPost
+        public function createPost(array $data);
+
         //updateById
         public function updatePost(array $data, $id);
 
