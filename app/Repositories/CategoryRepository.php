@@ -26,4 +26,8 @@ class CategoryRepository implements CategoryRepositoryInterface
     {
         return Cateory::where('id', $id)->update($data);
     }
+
+    public function deleteCategory($id) {
+        return Cateory::where('id', $id)->delete();
+    }
 }
