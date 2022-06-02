@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,4 +27,10 @@ use Illuminate\Support\Facades\Route;
 //CATEGORY
 Route::prefix('v1')->group(function () {
     Route::resource('categories', 'App\Http\Controllers\CategoryController')->except(['create', 'edit']);
+});
+
+//POST
+Route::prefix('v1')->group(function () {
+    Route::resource('posts', 'App\Http\Controllers\PostController')->except(['create', 'edit']);
+    Route::get('search', [PostController::class, 'search']);
 });
