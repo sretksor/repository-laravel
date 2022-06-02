@@ -16,13 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-//TEST
-// Route::prefix('v1')->group(function () {
-//     Route::resource('data', 'App\Http\Controllers\ToroController')->except(['create', 'edit']);
-// });
 
 //CATEGORY
 Route::prefix('v1')->group(function () {
